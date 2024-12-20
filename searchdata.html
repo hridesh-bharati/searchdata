@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <input type="text" placeholder="Search..." id="num">
+    <button onclick="adca()">Search</button>
+    <div id="para"></div>
+
+    <script>
+        const person = [
+            {
+                'person_id': '101',
+                "person_name": 'Ajay',
+                "person_Address": 'Main Street near Central Park',
+                "person_Email": 'johndoe@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '102',
+                "person_name": 'vivek',
+                "person_Address": 'Oak Avenue near the City Mall',
+                "person_Email": 'janesmith@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '103',
+                "person_name": 'deepak',
+                "person_Address": 'Pine Road near Greenfield Park',
+                "person_Email": 'robertjohnson@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '104',
+                "person_name": 'ravi',
+                "person_Address": 'Birch Lane near Maple School',
+                "person_Email": 'emilydavis@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '105',
+                "person_name": 'kaamini',
+                "person_Address": 'Elm Street near High School',
+                "person_Email": 'michaelbrown@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '106',
+                "person_name": 'Sarah Wilson',
+                "person_Address": 'Cedar Road near the Library',
+                "person_Email": 'sarahwilson@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '107',
+                "person_name": 'David Lee',
+                "person_Address": 'Maple Street near River Park',
+                "person_Email": 'davidlee@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '108',
+                "person_name": 'ankit',
+                "person_Address": 'Sunset Boulevard near Ocean View',
+                "person_Email": 'sophiamartinez@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '109',
+                "person_name": 'James Taylor',
+                "person_Address": 'Willow Street near the Bridge',
+                "person_Email": 'jamestaylor@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '110',
+                "person_name": 'Olivia Clark',
+                "person_Address": 'River Drive near Golden Gate',
+                "person_Email": 'oliviaclark@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '111',
+                "person_name": 'William Harris',
+                "person_Address": 'Cypress Avenue near Downtown',
+                "person_Email": 'williamharris@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '112',
+                "person_name": 'Isabella Lewis',
+                "person_Address": 'Cherry Lane near Hillside',
+                "person_Email": 'isabellalewis@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '113',
+                "person_name": 'Ethan Walker',
+                "person_Address": 'Oak Street near the Park',
+                "person_Email": 'ethanwalker@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '114',
+                "person_name": 'Amelia Hall',
+                "person_Address": 'Ash Road near Bridgewater',
+                "person_Email": 'ameliahall@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '115',
+                "person_name": 'Alexander Young',
+                "person_Address": 'Lakeside Drive near Sunset Park',
+                "person_Email": 'alexanderyoung@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '116',
+                "person_name": 'Mia King',
+                "person_Address": 'Forest Road near Rosewood Estate',
+                "person_Email": 'miaking@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '117',
+                "person_name": 'Henry Scott',
+                "person_Address": 'Palm Street near Liberty Mall',
+                "person_Email": 'henryscott@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '118',
+                "person_name": 'Charlotte Green',
+                "person_Address": 'Broadway Avenue near Central Plaza',
+                "person_Email": 'charlottegreen@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '119',
+                "person_name": 'Daniel Adams',
+                "person_Address": 'Harbor Drive near Riverside Park',
+                "person_Email": 'danieladams@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '120',
+                "person_name": 'Grace Nelson',
+                "person_Address": 'Kings Road near the Mall',
+                "person_Email": 'gracennelson@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '121',
+                "person_name": 'Jack Thomas',
+                "person_Address": 'Bay Street near the Beach',
+                "person_Email": 'jackthomas@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '122',
+                "person_name": 'Madeline Moore',
+                "person_Address": 'Spring Road near Park View',
+                "person_Email": 'madelinemoore@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '123',
+                "person_name": 'Lucas White',
+                "person_Address": 'Hickory Street near Forest Hills',
+                "person_Email": 'lucaswhite@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '124',
+                "person_name": 'Zoe Martin',
+                "person_Address": 'Sunrise Avenue near the River',
+                "person_Email": 'zoemartin@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '125',
+                "person_name": 'Liam Lee',
+                "person_Address": 'Cherry Blossom Road near Mountain View',
+                "person_Email": 'liamlee@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '126',
+                "person_name": 'Chloe Perez',
+                "person_Address": 'Golden Oak Road near the Stadium',
+                "person_Email": 'chloeperez@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '127',
+                "person_name": 'Benjamin Thompson',
+                "person_Address": 'Windmill Street near West Park',
+                "person_Email": 'benjaminthompson@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '128',
+                "person_name": 'Ella Harris',
+                "person_Address": 'Lilac Lane near the Riverbank',
+                "person_Email": 'ellaharris@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '129',
+                "person_name": 'Matthew Robinson',
+                "person_Address": 'Silver Street near Green Hills',
+                "person_Email": 'matthewrobinson@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '130',
+                "person_name": 'Harper Walker',
+                "person_Address": 'Crescent Road near Ocean View',
+                "person_Email": 'harperwalker@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '131',
+                "person_name": 'Eleanor Carter',
+                "person_Address": 'Riverbank Street near Town Square',
+                "person_Email": 'eleanorcarter@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '132',
+                "person_name": 'Samuel Turner',
+                "person_Address": 'Desert Road near Grand Canyon',
+                "person_Email": 'samuelturner@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '133',
+                "person_name": 'Ava Walker',
+                "person_Address": 'Greenfield Road near Maple Grove',
+                "person_Email": 'avawalker@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '134',
+                "person_name": 'Joseph Carter',
+                "person_Address": 'Sunset Street near Coastal Road',
+                "person_Email": 'josephcarter@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '135',
+                "person_name": 'Lily Turner',
+                "person_Address": 'Cedar Lane near the Lake',
+                "person_Email": 'lilyturner@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '136',
+                "person_name": 'Sebastian Green',
+                "person_Address": 'Mountain Road near City Center',
+                "person_Email": 'sebastiangreen@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '137',
+                "person_name": 'Victoria Hill',
+                "person_Address": 'King Street near Bright Park',
+                "person_Email": 'victoriahill@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '138',
+                "person_name": 'James Hall',
+                "person_Address": 'Springfield Road near the School',
+                "person_Email": 'jameshall@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '139',
+                "person_name": 'Sophia King',
+                "person_Address": 'Harbor Road near Hilltop',
+                "person_Email": 'sophiaking@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '140',
+                "person_name": 'Elijah Evans',
+                "person_Address": 'Oak Valley Road near Forest Park',
+                "person_Email": 'elijahevans@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '141',
+                "person_name": 'Charlotte Brown',
+                "person_Address": 'Hilltop Road near Mountain View',
+                "person_Email": 'charlottebrown@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '142',
+                "person_name": 'Lucas Clark',
+                "person_Address": 'Riverfront Road near City Park',
+                "person_Email": 'lucasclark@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '143',
+                "person_name": 'Nina Allen',
+                "person_Address": 'Lake Road near the Bay',
+                "person_Email": 'ninaallen@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '144',
+                "person_name": 'Jacob Mitchell',
+                "person_Address": 'Woodland Street near Hilltop Village',
+                "person_Email": 'jacobmitchell@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '145',
+                "person_name": 'Grace Rodriguez',
+                "person_Address": 'Seaside Road near Sunset Bay',
+                "person_Email": 'gracerodriguez@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '146',
+                "person_name": 'Samuel Thomas',
+                "person_Address": 'Redwood Street near River Park',
+                "person_Email": 'samuelthomas@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '147',
+                "person_name": 'Elizabeth Adams',
+                "person_Address": 'Park Road near City Gardens',
+                "person_Email": 'elizabethadams@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '148',
+                "person_name": 'Matthew Phillips',
+                "person_Address": 'Bridlewood Road near the Stadium',
+                "person_Email": 'matthewphillips@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '149',
+                "person_name": 'Megan Roberts',
+                "person_Address": 'Southfield Road near Riverside',
+                "person_Email": 'meganroberts@example.com',
+                "url": 'home.webp'
+            },
+            {
+                'person_id': '150',
+                "person_name": 'Ryan Walker',
+                "person_Address": 'Golden Gate Road near the Hill',
+                "person_Email": 'ryanwalker@example.com',
+                "url": 'home.webp'
+            }
+        ];
+        const adca = () => {
+
+            const diit = async () => {
+                // const data = await fetch(person)
+                // const res = await data.json()
+                // console.log(res);
+                // console.log(person[0].person_name);
+                const UserId = document.getElementById('num').value
+                const data = person.filter((data) => data.person_id == UserId || data.person_name == UserId || data.person_Email == UserId)
+
+                data.map((itmes) => {
+                    document.getElementById('para').innerHTML =
+                        `
+                    <div class="container m-auto w-100 d-flex justify-content-center">
+                        <div class="crd bg-primary-subtle mt-5 m-2 py-5 px-3 shadow-sm w-75">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h2 class="card-subtitle mb-2 text-muted "><b class='text-danger'> User Id :
+                                            </b>${itmes.person_id}</h2>
+                                        <h5 class="card-title h2" id="para"> ${itmes.person_name}</h5>
+                                        <p class="card-text fw-bold  pt-3"><i class="bi bi-geo-alt-fill "></i>${itmes.person_Address} </p>
+                                        <p class="card-text text-success">
+                                            <i class="bi bi-envelope-paper-heart-fill"></i>
+                                            ${itmes.person_Email} </p>
+                                    </div>
+                                </div>
+                            <div class="col-md-6">
+                                <img src=${itmes.url} class='w-75' alt="">
+                            </div>
+                            </div>
+                        </div>
+                `
+                }
+                )
+                // localStorage.setItem("Data", JSON.stringify(data))
+                document.getElementById('num').value = ''
+            }
+            diit()
+        }
+    </script>
+
+
+</body>
+
+</html>
